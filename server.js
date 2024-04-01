@@ -17,9 +17,14 @@ next()
 app.use(express.json())
 
 //routes
-
+app.use('/',(req,res,next)=>{
+    res.json({message:"hello"})
+    next()
+  })
 app.use('/api/workouts/',workoutsroutes)
 app.use('/api/user/',userRoutes)
+
+
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
