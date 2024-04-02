@@ -3,7 +3,7 @@ const express = require('express')
 const mongoose=require('mongoose')
 const workoutsroutes=require('./routes/workouts')
 const userRoutes=require('./routes/user')
-
+const cors = require('cors')
 
 // express app
 
@@ -17,10 +17,7 @@ next()
 app.use(express.json())
 
 //routes
-/* app.use('/',(req,res,next)=>{
-    res.json({message:"hello"})
-    next()
-  }) */
+app.use(cors())
 app.use('/api/workouts/',workoutsroutes)
 app.use('/api/user/',userRoutes)
 
