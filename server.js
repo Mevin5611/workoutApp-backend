@@ -17,10 +17,10 @@ next()
 app.use(express.json())
 
 //routes
-app.use('/',(req,res,next)=>{
+/* app.use('/',(req,res,next)=>{
     res.json({message:"hello"})
     next()
-  })
+  }) */
 app.use('/api/workouts/',workoutsroutes)
 app.use('/api/user/',userRoutes)
 
