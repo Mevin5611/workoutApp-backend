@@ -28,8 +28,8 @@ app.use('/api/user/',userRoutes)
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
-    app.listen(4000,()=>{
-        console.log("DB connected & running on PORT",4000);
+    app.listen(process.env.PORT,()=>{
+        console.log("DB connected & running on PORT",process.env.PORT);
     })
 
 })
